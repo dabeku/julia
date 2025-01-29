@@ -1,20 +1,43 @@
 # Import necessary libraries
-using Plots
-using DataFrames
+using Plots  # For plotting
+using DataFrames  # For structured data handling
 
-# Generate sample data: x values from 1 to 10, and y = 2 * x
-x = 1:10  # x values from 1 to 10
-y = 2 .* x  # y = 2 * x (element-wise multiplication)
+# Create a DataFrame with multiple columns
+data = DataFrame(
+    x = 1:10,
+    y = 2 .* (1:10),
+    z = rand(10),
+    w = 5 .+ (1:10)
+)
 
-# Create a DataFrame to display the data in two columns
-data = DataFrame(x = x, y = y)
+# Print some output text
+println("This is a simple table with multiple columns")
+println("---------------------------------------------")
+println("Data in table format:\n")
+println(data)  # Print the DataFrame
 
-# Display the data in the console (two columns)
-println("Displaying data (x and y):")
-println(data)
+# Additional output text before plotting
+println("\nNext, let's plot a relationship between x and y:")
 
-# Create a plot of the data
-plot(x, y, label="y = 2x", xlabel="x", ylabel="y", title="Plot of y = 2x", linewidth=2)
+# Create the plot of x vs. y
+p = plot(data.x, data.y, label="y = 2x", xlabel="x", ylabel="y", title="x vs y")
 
-# Show the plot
-display(plot(x, y, label="y = 2x", xlabel="x", ylabel="y", title="Plot of y = 2x", linewidth=2))
+# Save the plot as a PNG file
+savefig(p, "x_vs_y_plot.png")
+println("\nPlot saved as 'x_vs_y_plot.png'.")
+
+# Optionally, you can also save the plot as a PDF
+# savefig(p, "x_vs_y_plot.pdf")
+
+# Display the plot in the notebook (or REPL)
+display(p)
+
+# Show a plot comparing all columns (just as an example)
+println("\nLet's also compare all the columns in a simple line plot:")
+
+# Create the plot comparing all columns
+p2 = plot(data.x, [data.y data.z data.w], label=["y" "z" "w"], title="Multiple Columns Comparison")
+
+# Save the second plot as a PNG file
+savefig(p2, "multiple_columns_comparison.png")
+println("\nPlot saved as 'multiple_columns_comparison.png'.")
