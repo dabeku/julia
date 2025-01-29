@@ -12,7 +12,7 @@ data = DataFrame(
 
 # Print some output text
 println("This is a simple table with multiple columns")
-println("--------------------------------")
+println("-----------------------------------")
 println("Data in table format:\n")
 println(data)  # Print the DataFrame
 
