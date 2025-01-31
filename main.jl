@@ -1,2 +1,2 @@
-include("function.fl")
+include("function.jl")
 println(greet("Julia"))
