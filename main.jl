@@ -1,6 +1,6 @@
 # Define file paths
-input_filename <- "input.txt"
-output_filename <- "output.txt"
+input_filename = "input.txt"
+output_filename = "output.txt"
 
 input_file = open(input_filename, "r")
 input_value = parse(Int, readline(input_file))
