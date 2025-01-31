@@ -1,2 +1,2 @@
 include("function.fl")
-println(greet(Julia))
+println(greet("Julia"))
