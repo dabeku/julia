@@ -35,7 +35,7 @@ println("\nLet's also compare all the columns\n")
 # Create the plot comparing all columns
 p2 = plot(data.x, [data.y data.z data.w], label=["y" "z" "w"], title="Multiple Columns Comparison")
 
-# Save the second plot as a PNG file
+# Save the second plot
 savefig(p2, "multiple_columns.png")
 
 data = DataFrame(
