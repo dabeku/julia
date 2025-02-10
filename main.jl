@@ -30,11 +30,19 @@ println("\nPlot saved as 'x_vs_y_plot.png'.")
 display(p)
 
 # Show a plot comparing all columns (just as an example)
-println("\nLet's also compare all the columns")
+println("\nLet's also compare all the columns\n")
 
 # Create the plot comparing all columns
 p2 = plot(data.x, [data.y data.z data.w], label=["y" "z" "w"], title="Multiple Columns Comparison")
 
 # Save the second plot as a PNG file
 savefig(p2, "multiple_columns.png")
-println("\nPlot saved as 'multiple_columns.png'.")
+
+data = DataFrame(
+    x = 1:10,
+    y = 3 .* (1:10),
+    z = rand(10),
+    w = 6 .+ (1:10)
+)
+
+println(data)
