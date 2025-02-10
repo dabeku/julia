@@ -26,7 +26,7 @@ p = plot(data.x, data.y, label="y = 2x", xlabel="x", ylabel="y", title="x vs y")
 savefig(p, "x_vs_y_plot.png")
 println("\nPlot saved as 'x_vs_y_plot.png'.")
 
-# Display the plot in the notebook (or REPL)
+# Display the plot in the notebook
 display(p)
 
 # Show a plot comparing all columns (just as an example)
